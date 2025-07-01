@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дмитрий Белоногов | Психолог для детей и семей</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* РБК Цветовая схема */
+        :root {
+            --rbc-blue: #006CB5;
+            --rbc-red: #E30613;
+            --rbc-dark-blue: #00467F;
+            --rbc-gray: #F2F2F2;
+            --rbc-text: #333333;
+            --rbc-light-gray: #F9F9F9;
+            --rbc-border: #E0E0E0;
+            --rbc-light-blue: #E6F0F8;
+            --rbc-header-bg: #FFFFFF;
+            --rbc-nav-hover: #F2F8FC;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--rbc-text);
+            background-color: #ffffff;
+            line-height: 1.5;
+            font-size: 16px;
+        }
+        
+        /* Шапка сайта в стиле РБК */
+        header {
+            background-color: var(--rbc-header-bg);
+            border-bottom: 1px solid var(--rbc-border);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .header-top {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+        
+        .logo {
+            font-family: 'PT Serif', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--rbc-blue);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--rbc-red);
+            margin-left: 5px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            color: var(--rbc-text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-menu a:hover {
+            background: var(--rbc-nav-hover);
+            color: var(--rbc-blue);
+        }
+        
+        .contact-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .phone a {
+            color: var(--rbc-text);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            display: block;
+            transition: color 0.2s ease;
+        }
+        
+        .phone a:hover {
+            color: var(--rbc-blue);
+        }
+        
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+        }
+        
+        /* Герой-баннер */
+        .hero {
+            max-width: 1200px;
+            margin: 30px auto 40px;
+            padding: 0 20px;
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        .hero h1 {
+            font-family: 'PT Serif', serif;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--rbc-dark-blue);
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--rbc-text);
+            font-weight: 400;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--rbc-red);
+            color: white;
+            padding: 14px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(227, 6, 19, 0.3);
+        }
+        
+        .btn:hover {
+            background: #c10510;
+            box-shadow: 0 4px 12px rgba(227, 6, 19, 0.4);
+        }
+        
+        /* Основное содержание */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        section {
+            margin-bottom: 70px;
+        }
+        
+        h2 {
+            font-family: 'PT Serif', serif;
+            color: var(--rbc-dark-blue);
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--rbc-red);
+        }
+        
+        /* Обо мне секция */
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            background: white;
+            border-radius: 4px;
+            padding: 30px;
+            border: 1px solid var(--rbc-border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .about-photo {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 4px;
+            overflow: hidden;
+            background: var(--rbc-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 350px;
+            border: 1px solid var(--rbc-border);
+        }
+        
+        .about-photo i {
+            font-size: 8rem;
+            color: var(--rbc-blue);
+            opacity: 0.7;
+        }
+        
+        .about-text {
+            flex: 2;
+        }
+        
+        .about-text h3 {
+            font-family: 'PT Serif', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--rbc-dark-blue);
+        }
+        
+        .qualifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .qualification-item {
+            background: white;
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid var(--rbc-border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .qualification-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--rbc-blue);
+        }
+        
+        .qualification-item h4 {
+            color: var(--rbc-blue);
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        /* Услуги в стиле РБК */
+        .services {
+            background: var(--rbc-light-gray);
+            padding: 60px 0;
+            border-top: 1px solid var(--rbc-border);
+            border-bottom: 1px solid var(--rbc-border);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--rbc-border);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-img {
+            height: 180px;
+            background: linear-gradient(45deg, var(--rbc-blue), var(--rbc-dark-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .service-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-content h3 {
+            font-family: 'PT Serif', serif;
+            color: var(--rbc-blue);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .service-link {
+            color: var(--rbc-red);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: auto;
+        }
+        
+        .service-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Групповая терапия */
+        .group-therapy {
+            background: white;
+            padding: 35px;
+            border-radius: 4px;
+            border: 1px solid var(--rbc-border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .group-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--rbc-border);
+        }
+        
+        .group-header h3 {
+            font-family: 'PT Serif', serif;
+            color: var(--rbc-blue);
+            font-size: 1.5rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            padding: 15px;
+            border-radius: 4px;
+            border: 1px solid var(--rbc-border);
+            background: var(--rbc-light-gray);
+        }
+        
+        .benefit-icon {
+            background: var(--rbc-blue);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .rules-list {
+            margin: 30px 0;
+            padding-left: 20px;
+            list-style: none;
+        }
+        
+        .rules-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            line-height: 1.6;
+        }
+        
+        .rules-list li::before {
+            content: "•";
+            color: var(--rbc-red);
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -3px;
+        }
+        
+        .price-box {
+            background: var(--rbc-blue);
+            color: white;
+            padding: 25px;
+            border-radius: 4px;
+            text-align: center;
+            max-width: 500px;
+            margin: 30px auto;
+            border: 1px solid var(--rbc-border);
+        }
+        
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+            font-family: 'PT Serif', serif;
+        }
+        
+        /* Контакты */
+        .contact-section {
+            background: linear-gradient(rgba(0, 108, 181, 0.95), rgba(0, 108, 181, 0.95)), 
+                        url('https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            border-top: 1px solid var(--rbc-border);
+        }
+        
+        .contact-section h2 {
+            color: white;
+        }
+        
+        .contact-section h2::after {
+            background: white;
+        }
+        
+        .contact-info {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.7;
+        }
+        
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+        }
+        
+        .contact-info a:hover {
+            color: #fff;
+            border-bottom: 1px solid white;
+        }
+        
+        .whatsapp-btn-large {
+            background: #25D366;
+            color: white;
+            padding: 15px 35px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .whatsapp-btn-large:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+        
+        /* Подвал в стиле РБК */
+        footer {
+            background: var(--rbc-dark-blue);
+            color: white;
+            padding: 50px 20px 30px;
+            border-top: 4px solid var(--rbc-red);
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-section {
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            font-family: 'PT Serif', serif;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--rbc-red);
+        }
+        
+        .footer-section p {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.2s ease;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .footer-section a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 900px) {
+            .header-top {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 20px;
+                gap: 15px;
+            }
+            
+            .nav-menu {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .contact-header {
+                gap: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .group-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            
+            .hero {
+                padding: 30px 0;
+            }
+            
+            .btn, .whatsapp-btn-large {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            h2 {
+                font-size: 1.9rem;
+            }
+            
+            .service-img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="header-top">
+            <div class="logo">Дмитрий<span>Белоногов</span></div>
+            
+            <div class="nav-menu">
+                <a href="#about">Обо мне</a>
+                <a href="#services">Услуги</a>
+                <a href="#group">Групповая терапия</a>
+                <a href="#contact">Контакты</a>
+            </div>
+            
+            <div class="contact-header">
+                <div class="phone">
+                    <a href="tel:+79637200232">+7 (963) 720-02-32</a>
+                </div>
+                <a href="https://wa.me/79637200232" class="whatsapp-btn" target="_blank">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Герой-баннер -->
+    <div class="hero">
+        <h1>Профессиональная психологическая помощь для детей и семей</h1>
+        <p>Индивидуальные консультации, работа с парами, терапевтические группы</p>
+        <a href="#contact" class="btn">Записаться на консультацию</a>
+    </div>
+    
+    <!-- О психологе -->
+    <section id="about" class="container">
+        <h2>Обо мне</h2>
+        <div class="about-content">
+            <div class="about-photo">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="about-text">
+                <h3>Дмитрий Белоногов</h3>
+                <p>Я психолог с многолетним опытом работы, специализирующийся на помощи детям, парам и семьям. Моя миссия — помочь вам преодолеть трудности, улучшить взаимоотношения и обрести гармонию в жизни.</p>
+                <p>Окончил факультет психологии МГУ имени М.В. Ломоносова. Работаю в направлениях психоаналитической психотерапии, семейной психотерапии и группового анализа.</p>
+                
+                <div class="qualifications">
+                    <div class="qualification-item">
+                        <h4>Образование</h4>
+                        <p>Факультет психологии МГУ имени М.В. Ломоносова</p>
+                    </div>
+                    <div class="qualification-item">
+                        <h4>Сертификации</h4>
+                        <p>Сертифицированный групп-аналитик (COIRAG, IAGP)</p>
+                    </div>
+                    <div class="qualification-item">
+                        <h4>Профессиональные членства</h4>
+                        <p>Член ЕАРПП, семейный психотерапевт, сексолог</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Услуги -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Мои услуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Индивидуальные консультации</h3>
+                        <p>Работа с личными проблемами, тревожностью, стрессом, депрессией, кризисными состояниями. Помощь в поиске внутренних ресурсов и путей развития.</p>
+                        <a href="#contact" class="service-link">Записаться <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Семейная психотерапия</h3>
+                        <p>Помощь парам в решении конфликтов, улучшении взаимопонимания, преодолении кризисов в отношениях. Работа с детско-родительскими отношениями.</p>
+                        <a href="#contact" class="service-link">Записаться <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Терапевтические группы</h3>
+                        <p>Групп-анализ для глубокой проработки личных проблем, улучшения коммуникативных навыков и самопознания в безопасной поддерживающей среде.</p>
+                        <a href="#group" class="service-link">Подробнее <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Групповая терапия -->
+    <section id="group" class="container">
+        <h2>Терапевтическая группа</h2>
+        
+        <div class="group-therapy">
+            <div class="group-header">
+                <h3>Группа из 5-6 участников</h3>
+                <div class="group-schedule">
+                    <p><i class="far fa-calendar-alt"></i> По средам, 20:00-21:30</p>
+                    <p><i class="fas fa-video"></i> Онлайн (Zoom)</p>
+                </div>
+            </div>
+            
+            <p>Группа состоит из 5-6 участников. Встречи проходят онлайн (Zoom) по средам с 20:00 до 21:30 (1 час 30 минут) еженедельно.</p>
+            
+            <h3 style="color: var(--rbc-blue); margin: 40px 0 20px;">Участие в группе позволит:</h3>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div>
+                        <h4>Справиться с переживаниями</h4>
+                        <p>Включить их в свой жизненный опыт</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div>
+                        <h4>Проанализировать отношения</h4>
+                        <p>Осознать свои паттерны взаимодействия</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <h4>Выработать новые навыки</h4>
+                        <p>Улучшить качество общения и взаимодействия</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div>
+                        <h4>Лучше узнать себя</h4>
+                        <p>Открыть новые грани своей личности</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h4>Повысить качество жизни</h4>
+                        <p>Как результат всей работы в группе</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="color: var(--rbc-blue); margin: 40px 0 20px;">Правила участия:</h3>
+            
+            <ul class="rules-list">
+                <li>Говорите обо всем, что приходит в голову - важна свободная дискуссия.</li>
+                <li>Соблюдайте конфиденциальность — не рассказывайте о том, что услышали на группе и о других участниках за её пределами.</li>
+                <li>Общение с участниками группы за её пределами запрещено, если же это произошло, то принято не затрагивать события, произошедшие на группе.</li>
+                <li>Родственники, друзья, коллеги не могут участвовать в одной группе.</li>
+                <li>Участник, желающий покинуть группу, говорит об этом желании на группе и минимум 4 встречи остается в группе.</li>
+                <li>Участие в группе предполагает регулярные посещения, пропущенные встречи оплачиваются (кроме 4-х встреч).</li>
+                <li>Группа не встречается в праздничные дни. Отпуск группы проходит в августе.</li>
+            </ul>
+            
+            <div class="price-box">
+                <h3>Стоимость участия</h3>
+                <div class="price-amount">2 500 рублей</div>
+                <p>за одну встречу</p>
+            </div>
+            
+            <p style="text-align: center; margin-top: 25px;">
+                <strong>Собеседование:</strong> Пожалуйста, напишите мне в WhatsApp для записи на группу.
+            </p>
+        </div>
+    </section>
+    
+    <!-- Контакты -->
+    <section id="contact" class="contact-section">
+        <h2>Запись на консультацию</h2>
+        
+        <div class="contact-info">
+            <p>Если у Вас есть запрос на индивидуальную или семейную психотерапию или Вы хотите принять участие в группе - приглашаю вас!</p>
+            
+            <p style="margin: 25px 0;">
+                <i class="fas fa-phone"></i> Телефон: <a href="tel:+79637200232">+7 (963) 720-02-32</a>
+            </p>
+            
+            <p>Консультации проходят онлайн (Zoom) или в кабинете.</p>
+            
+            <a href="https://wa.me/79637200232" class="whatsapp-btn-large" target="_blank">
+                <i class="fab fa-whatsapp"></i> Написать в WhatsApp
+            </a>
+        </div>
+    </section>
+    
+    <!-- Подвал -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Дмитрий Белоногов</h3>
+                <p>Психолог, психоаналитический психотерапевт, сертифицированный групп-аналитик</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <a href="tel:+79637200232"><i class="fas fa-phone"></i> +7 (963) 720-02-32</a>
+                <a href="https://wa.me/79637200232" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="mailto:info@example.com"><i class="fas fa-envelope"></i> info@example.com</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Направления работы</h3>
+                <a href="#services">Индивидуальная терапия</a>
+                <a href="#services">Семейная психотерапия</a>
+                <a href="#group">Терапевтические группы</a>
+                <a href="#services">Детская психология</a>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Навигация</h3>
+                <a href="#about">Обо мне</a>
+                <a href="#services">Услуги</a>
+                <a href="#group">Групповая терапия</a>
+                <a href="#contact">Контакты</a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>© 2023 Дмитрий Белоногов. Все права защищены.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Плавная прокрутка к якорям
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Анимация кнопок при наведении
+        document.querySelectorAll('.btn, .whatsapp-btn, .whatsapp-btn-large').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.03)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+    </script>
+</body>
+</html>
